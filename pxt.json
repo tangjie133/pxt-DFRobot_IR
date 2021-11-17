@@ -1,5 +1,5 @@
 {
-    "name": "pxt-DFRobot_IR",
+    "name": "IR",
     "version": "0.0.4",
     "description": "",
     "dependencies": {
@@ -32,5 +32,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
