@@ -19,8 +19,7 @@
         "_locales/es/ir-strings.json",
         "_locales/nb/ir-strings.json",
         "_locales/ru/ir-strings.json",
-        "_locales/ja/ir-strings.json",
-        "custom.ts"
+        "_locales/ja/ir-strings.json"
     ],
     "testFiles": [
         "test.ts"
