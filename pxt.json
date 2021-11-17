@@ -19,9 +19,7 @@
         "_locales/es/ir-strings.json",
         "_locales/nb/ir-strings.json",
         "_locales/ru/ir-strings.json",
-        "_locales/ru/ir-jsdoc-strings.json",
         "_locales/ja/ir-strings.json",
-        "_locales/ja/ir-jsdoc-strings.json",
         "custom.ts",
         "shims.d.ts",
         "enums.d.ts"

@@ -2,7 +2,7 @@
 
 //% color=50 weight=80
 //% icon="\uf1eb"
-namespace maqueenIRV2 { 
+namespace IR { 
 int ir_code = 0x00;
 int ir_addr = 0x00;
 int data;
@@ -21,7 +21,6 @@ int logic_value(){//判断逻辑值"0"和"1"子函数
             return 1;
        }
     }
-uBit.serial.printf("error\r\n");
     return -1;
 }
 
@@ -83,49 +82,8 @@ void remote_decode(void){
 }
 
  //% 
-int irCode(){
+    int irCode(){
     remote_decode();
     return data;
-}
-
-//%
-int readPulseIn(int status){
-  uint32_t lasttime,nowtime,temp;
-  if(status == 1){//HIGH
-        lasttime = system_timer_current_time_us();
-	while(!uBit.io.P2.getDigitalValue()){ 
-           temp = system_timer_current_time_us();
-           if((temp - lasttime) > 70000){
-	     //uBit.serial.printf("time out 0 %d\r\n",(temp-lasttime));
-	     return -1;
-           }
-        }
-        lasttime = system_timer_current_time_us();
-	while(uBit.io.P2.getDigitalValue()){
-           if((system_timer_current_time_us() - lasttime) > 70000){
-	     //uBit.serial.printf("time out 1");
-	     return -1;
-           }
-        }
-        nowtime = system_timer_current_time_us();
-	
-  }else{//LOW
-	while(uBit.io.P2.getDigitalValue()){
-           if((system_timer_current_time_us() - lasttime) > 70000){
-	     //uBit.serial.printf("time out 3");
-	     return -1;
-           }
-        }
-	lasttime = system_timer_current_time_us();
-	while(!uBit.io.P2.getDigitalValue()){
-           if((system_timer_current_time_us() - lasttime) > 70000){
-	     //uBit.serial.printf("time out 4");
-	     return -1;
-           }
-	}
-	nowtime = system_timer_current_time_us();
-  }
-  return (nowtime - lasttime);
-}
-
+    }
 }
