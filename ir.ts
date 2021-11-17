@@ -7,7 +7,8 @@ namespace IR {
     let state: number;
     let data1: number;
     let irstate: number;
-    
+    let irData: number = -1;
+
     //% shim=DFRobotIR::irCode
     function irCode(): number {
         return 0;
@@ -44,9 +45,9 @@ namespace IR {
 
     basic.forever(() => {
         if (state == 1) {
-            irstate = valuotokeyConversion();
-            if (irstate != -1) {
-                data1 = irstate
+            irstate = irCode();
+            if (irstate != 0) {
+                data1 = irstate & 0xff;
                 control.raiseEvent(11, 22)
             }
         }
@@ -57,11 +58,10 @@ namespace IR {
     function valuotokeyConversion(): number {
         //serial.writeValue("x", irCode() )
         let data = irCode();
-        if (data == 0){
-            data =  -1;
-        }else{
-            data = data & 0xff;
+        if (data == 0) {
+        } else {
+            irData = data & 0xff;
         }
-        return data;
+        return irData;
     }
 }
