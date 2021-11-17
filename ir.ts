@@ -2,7 +2,7 @@
 /**
  * Custom blocks
  */
-//% weight=100 color=#0fbc11 icon="/uf033" block="IR"
+//% weight=100 color=#0fbc11 icon="\uf1eb" block="IR"
 namespace IR {
     let state: number;
     let data1: number;
@@ -55,6 +55,13 @@ namespace IR {
     })
 
     function valuotokeyConversion(): number {
-        return (irCode() & 0XFF);
+        //serial.writeValue("x", irCode() )
+        let data = irCode();
+        if (data == 0){
+            data =  -1;
+        }else{
+            data = data & 0xff;
+        }
+        return data;
     }
 }
