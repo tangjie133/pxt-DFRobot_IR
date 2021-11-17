@@ -1,6 +1,6 @@
 #include "pxt.h"
 
-namespace IR { 
+namespace DFRobotIR { 
 int ir_code = 0x00;
 int ir_addr = 0x00;
 int data;

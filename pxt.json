@@ -20,9 +20,7 @@
         "_locales/nb/ir-strings.json",
         "_locales/ru/ir-strings.json",
         "_locales/ja/ir-strings.json",
-        "custom.ts",
-        "shims.d.ts",
-        "enums.d.ts"
+        "custom.ts"
     ],
     "testFiles": [
         "test.ts"

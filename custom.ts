@@ -8,7 +8,7 @@ namespace IR {
     let data1: number;
     let irstate: number;
     
-    //% shim=IR::irCode
+    //% shim=DFRobotIR::irCode
     function irCode(): number {
         return 0;
     }
